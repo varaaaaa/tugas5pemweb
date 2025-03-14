@@ -11,6 +11,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $_SESSION['education_college'] = $_POST['education_college'] ?? '';
     $_SESSION['achievements'] = nl2br($_POST['achievements'] ?? '');
     $_SESSION['skills'] = nl2br($_POST['skills'] ?? '');
+    $_SESSION['birth_place'] = $_POST['birth_place'] ?? '';
+    $_SESSION['birth_date'] = $_POST['birth_date'] ?? '';
+
     
     // Simpan foto
     if (isset($_FILES['photo']) && $_FILES['photo']['error'] == 0) {
@@ -42,6 +45,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <h1><?php echo $_SESSION['fullname'] ?: "Curriculum Vitae"; ?></h1>
         <p><strong>Email:</strong> <?php echo $_SESSION['email']; ?></p>
         <p><strong>Alamat:</strong> <?php echo $_SESSION['address']; ?></p>
+        <p><strong>Tempat, Tanggal Lahir:</strong> <?php echo $_SESSION['birth_place'] . ", " . date('d F Y', strtotime($_SESSION['birth_date'])); ?></p>
+
         
         <?php if (!empty($_SESSION['organization'])): ?>
         <h2>Pengalaman Organisasi</h2>

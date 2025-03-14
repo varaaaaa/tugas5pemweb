@@ -37,6 +37,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <input type="text" name="fullname" required>
         <label>Alamat:</label>
         <textarea name="address" required></textarea>
+        <label>Tempat, Tanggal Lahir:</label>
+        <input type="text" name="birth_place" placeholder="Tempat Lahir" required>
+        <input type="date" name="birth_date" required>
+
         <label>Pengalaman Organisasi (Opsional):</label>
         <textarea name="organization" placeholder="Pisahkan dengan enter"></textarea>
         <label>Pengalaman Kerja (Opsional):</label>
